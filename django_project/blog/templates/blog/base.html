@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head> 
+	<title>STUDY SPACE</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Learn\ &mdash; Free Website Template, Free HTML5 Template by freehtml5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="freehtml5.co" />
+
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
+    <!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<!-- Modernizr JS -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js'%}"></script>
+
+</head>
+<body>
+
+	<nav class="fh5co-nav bg-dark" role="navigation">
+	<div class="top">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 text-right">
+						<p class="num">Email: studyspace.vjti@gmail.com </p>
+						<ul class="fh5co-social">
+							<li><a href="#"><i class="icon-github"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="top-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-1">
+						<div id="fh5co-logo"><a href="http://127.0.0.1:8000/#fh5co-started">StudySpace<span>.</span></a></div>
+					</div>
+					<div class="col-xs-11 text-right menu-1">
+						<ul>
+							<li class="active"><a href="{% url 'blog-home' %}">Home</a></li>
+							<li><a href="http://127.0.0.1:8000/#fh5co-project">Gallery</a></li>
+							<li><a href="http://127.0.0.1:8000/#fh5co-explore">Buy and Sell</a></li>
+							{% if user.is_authenticated %}
+							
+							<li class="btn-cta"><a href="crypto/crypto"><span>Donate</span></a></li>
+							<li class="btn-cta"><a href="{% url 'blog-home' %}"><span>Hello {{user.username}}</span></a></li>
+							<li class="btn-cta"><a href="{% url 'logout' %}"><span>Logout</span></a></li>
+							{% else %}
+							<li class="btn-cta"><a href="{% url 'register' %}"><span>Register</span></a></li>
+							<li class="btn-cta"><a href="{% url 'login' %}"><span>Login</span></a></li>
+							<li class="btn-cta"><a href="{% url 'Cryptography' %}"><span>Donate</span></a></li>
+							{% endif %}
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</nav>
+
+	{% comment %} {%if messages%}
+		<ul class="messages">
+		{% for message in messages %}
+		<div class="alert alert-{{message.tags}}">
+		{{message}}
+		</div>
+		{% endfor %}
+	{% endif %} {% endcomment %}
+
+
+	<div class="wrapper" >
+	<div class="content-section">
+	{% block content %}
+	{% endblock content %}
+    </div>
+	</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<!-- jQuery -->
+	<script src="{% static 'js/jquery.min.js'%}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'js/jquery.easing.1.3.js'%}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'js/bootstrap.min.js'%}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'js/jquery.waypoints.min.js'%}"></script>
+	<!-- Stellar Parallax -->
+	<script src="{% static 'js/jquery.stellar.min.js'%}"></script>
+	<!-- Carousel -->
+	<script src="{% static 'js/owl.carousel.min.js'%}"></script>
+	<!-- countTo -->
+	<script src="{% static 'js/jquery.countTo.js'%}"></script>
+	<!-- Magnific Popup -->
+	<script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>
+	<script src="{% static 'js/magnific-popup-options.js'%}"></script>
+	<!-- Main -->
+	<script src="{% static 'js/main.js'%}"></script>
+</body>
+</html>

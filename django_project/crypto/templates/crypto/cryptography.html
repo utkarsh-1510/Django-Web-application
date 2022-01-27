@@ -1,0 +1,26 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+<div class="content-section" style="padding-top:140px">
+    <form  action="{% url 'Cryptography' %}" method="POST" enctype="multipart/form-data">
+
+        <div class="form-group">
+          <label for="{{form.file_name.id_for_label}}">File Name</label>
+          {{form.file_name}}
+        </div>
+        
+        <div class="form-group">
+            <label for="{{form.files_data.id_for_label}}">File</label>
+            {{form.files_data}}
+          </div>
+          {% csrf_token %}
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+</div>
+
+{% endblock content %}

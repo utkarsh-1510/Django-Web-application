@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+    <div class="content-section">
+       	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url('{% static "images/2.jpg" %}');" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<div class="display-t">
+						<div class="display-tc animate-box" data-animate-effect="fadeIn">
+
+							    <p><a class="btn btn-primary btn-lg btn-learn" href="{% url 'fy' %}">First Year</a>
+								<a class="btn btn-primary btn-lg btn-learn" href="{% url 'sy' %}">Second Year</a> </p>
+                                <a class="btn btn-primary btn-lg btn-learn" href="{% url 'ty' %}">Third Year</a> </p>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+    </div>
+{% endblock content %}

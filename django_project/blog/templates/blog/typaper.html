@@ -1,0 +1,52 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+<div class="content-section" style="padding-top:140px">
+    <div class="container mb-3 py-4">
+
+        <div class="row">
+            <div class="col- 12">
+
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <div class="container">
+                        <th >S/N</th>
+                        <th >Name</th>
+                        <th >File Link</th>
+                        <th ></th>
+                        </div>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for d in pdf %}
+                      <tr>
+                        <th>{{forloop.counter}}</th>
+                        <th>{{d.Caption}}</th>
+                        <th><a download href="{{d.pdf.url}}">{{d.pdf}}</a></th>
+
+
+
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+
+
+
+            </div>
+<!--        </div>-->
+    </div>
+<!--        #for video update-->
+<!--        {%for x in pp%}-->
+<!--        <video class="video-fluid z-depth-1" autoplay loop controls muted>-->
+<!--        <source src="{{x.pdf.url}}" type="video/mp4" />-->
+<!--        </video>-->
+<!--        {%endfor%}-->
+    </div>
+    </div>
+    </div>
+
+{% endblock content %}
